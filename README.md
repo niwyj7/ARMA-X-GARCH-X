@@ -1,5 +1,5 @@
 
-# Wind Power Generation Relation with German Electricity Prices
+# Wind Power Generation Link to German Electricity Prices
 
 This project studies the **relationship** between wind power feed-in and German electricity prices using AR-X and GARCH-X time-series models. The goal is to estimate whether higher wind generation is associated with lower spot prices, and whether wind feed-in is also related to price volatility.
 
