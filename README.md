@@ -1,7 +1,7 @@
 
-# Wind-Driven Merit-Order Effect in German Electricity Prices
+# Wind Power Generation Relation with German Electricity Prices
 
-This project studies the relationship between wind power feed-in and German day-ahead electricity prices using AR-X and GARCH-X time-series models. The goal is to estimate whether higher wind generation is associated with lower spot prices, and whether wind feed-in is also related to conditional price volatility.
+This project studies the **relationship** between wind power feed-in and German electricity prices using AR-X and GARCH-X time-series models. The goal is to estimate whether higher wind generation is associated with lower spot prices, and whether wind feed-in is also related to price volatility.
 
 ## Setup
 
@@ -9,6 +9,7 @@ Let:
 
 - $P_t$: electricity spot price
 - $W_t$: wind power feed-in
+- $D_t$: solar power feed-in
 - $S_t$: seasonal controls
 - $\varepsilon_t$: residual shock
 
@@ -30,50 +31,7 @@ S_t
 \varepsilon_t
 ```
 
-## Seasonality Treatment
-
-Electricity prices and wind generation both have strong seasonal patterns. Ignoring these patterns may confound the wind-price relationship.
-
-The model controls for seasonality using calendar fixed effects:
-
-```math
-S_t
-=
-\lambda_{\text{hour}}
-+
-\mu_{\text{weekday}}
-
-
-This means the wind coefficient is interpreted as the association between wind feed-in and prices after controlling for normal intraday, weekly or monthly price patterns.
-
-An alternative robustness check is to use seasonally adjusted variables:
-
-```math
-\tilde{P}_t = P_t - \hat{s}_P(t)
-```
-
-```math
-\tilde{W}_t = W_t - \hat{s}_W(t)
-```
-
-and estimate:
-
-```math
-\tilde{P}_t
-=
-\alpha
-+
-\sum_{i=1}^{p}\phi_i \tilde{P}_{t-i}
-+
-\beta \tilde{W}_t
-+
-\varepsilon_t
-```
-
-This tests whether wind generation above its normal seasonal level is associated with prices below their normal seasonal level.
-
-
-## Why AR-X?
+## AR-X
 
 Electricity prices are highly autocorrelated. A high price today often implies a high price in the next period. The AR terms capture this price persistence:
 
@@ -84,7 +42,7 @@ Electricity prices are highly autocorrelated. A high price today often implies a
 Typical useful lags include:
 
 ```math
-P_{t-1}, \quad P_{t-24}, \quad P_{t-168}
+P_{t-1}, \quad P_{t-2}, \quad P_{t-7}
 ```
 
 for hourly data, representing previous hour, previous day and previous week effects.
@@ -106,6 +64,8 @@ The GARCH-X variance equation is:
 \delta \sigma_{t-1}^2
 +
 \eta W_t
++
+\gamma D_t
 ```
 
 Here:
