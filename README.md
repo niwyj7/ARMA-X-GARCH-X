@@ -6,6 +6,10 @@ This project studies the **relationship** (not causality) between wind power fee
 <img width="1489" height="820" alt="image" src="https://github.com/user-attachments/assets/2a5e1eea-2cf1-464e-a22d-0ea0a268f676" />
 
 
+<img width="1194" height="547" alt="image" src="https://github.com/user-attachments/assets/cd2544be-e18b-4ff9-841a-088428da2dff" />
+
+<img width="1163" height="547" alt="image" src="https://github.com/user-attachments/assets/a73c1721-3fde-4447-89e7-8879303f2875" />
+
 ## Setup
 
 Let:
@@ -13,7 +17,7 @@ Let:
 - $P_t$: electricity spot price
 - $W_t$: wind power feed-in
 - $D_t$: solar power feed-in
-- $S_t$: seasonal controls (month, day of week)
+- $S_t$: seasonal controls 
 - $\varepsilon_t$: residual shock
 
 The baseline AR-X mean equation is:
