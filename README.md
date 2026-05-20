@@ -1,7 +1,10 @@
 
 # Wind Power Generation Link to German Electricity Prices
 
-This project studies the **relationship** between wind power feed-in and German electricity prices using AR-X and GARCH-X time-series models. The goal is to estimate whether higher wind generation is associated with lower spot prices, and whether wind feed-in is also related to price volatility.
+This project studies the **relationship** (not causality) between wind power feed-in and German electricity prices using AR-X and GARCH-X time-series models. The goal is to estimate whether higher wind generation is associated with lower spot prices, and whether wind feed-in is also related to price volatility. Coefficients are estimated seperately **by year**. 
+
+<img width="1489" height="820" alt="image" src="https://github.com/user-attachments/assets/2a5e1eea-2cf1-464e-a22d-0ea0a268f676" />
+
 
 ## Setup
 
@@ -10,7 +13,7 @@ Let:
 - $P_t$: electricity spot price
 - $W_t$: wind power feed-in
 - $D_t$: solar power feed-in
-- $S_t$: seasonal controls
+- $S_t$: seasonal controls (month, day of week)
 - $\varepsilon_t$: residual shock
 
 The baseline AR-X mean equation is:
@@ -21,6 +24,8 @@ P_t
 \alpha
 +
 \sum_{i=1}^{p}\phi_i P_{t-i}
++
+\sum_{i=1}^{p}\lambda_i W_{t-i}
 +
 \beta W_t
 +
@@ -39,13 +44,8 @@ Electricity prices are highly autocorrelated. A high price today often implies a
 \sum_{i=1}^{p}\phi_i P_{t-i}
 ```
 
-Typical useful lags include:
-
-```math
-P_{t-1}, \quad P_{t-2}, \quad P_{t-7}
-```
-
-for hourly data, representing previous hour, previous day and previous week effects.
+<img width="568" height="435" alt="image" src="https://github.com/user-attachments/assets/d00cb542-3d5b-4ece-ad52-ffe6b177bc00" />
+<img width="568" height="435" alt="image" src="https://github.com/user-attachments/assets/60ae6cf7-dce6-4cce-b432-d722639b2a5a" />
 
 
 ## GARCH-X Volatility Model
@@ -64,6 +64,8 @@ The GARCH-X variance equation is:
 \delta \sigma_{t-1}^2
 +
 \eta W_t
++
+\lambda W_{t-1}
 +
 \gamma D_t
 ```
