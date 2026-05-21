@@ -51,7 +51,10 @@ Electricity prices are highly autocorrelated. A high price today often implies a
 <img width="568" height="435" alt="image" src="https://github.com/user-attachments/assets/d00cb542-3d5b-4ece-ad52-ffe6b177bc00" />
 <img width="568" height="435" alt="image" src="https://github.com/user-attachments/assets/60ae6cf7-dce6-4cce-b432-d722639b2a5a" />
 
-<img width="962" height="576" alt="081a4c95-6422-48f0-a431-6c8f20f533fa" src="https://github.com/user-attachments/assets/b4399730-f031-4c69-badc-ed23a8d23c6f" />
+  <img width="944" height="310" alt="cdd65311-2bd3-4047-89ec-b3d70921bf8a" src="https://github.com/user-attachments/assets/3e763d0b-a7ad-4c59-a058-fe9973c40177" />
+
+
+
 
 ## GARCH-X Volatility Model
 
