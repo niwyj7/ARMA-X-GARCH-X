@@ -25,6 +25,8 @@ Adjusted price and wind:
 
 <img width="1163" height="547" alt="image" src="https://github.com/user-attachments/assets/a73c1721-3fde-4447-89e7-8879303f2875" />
 
+<img width="842" height="545" alt="image" src="https://github.com/user-attachments/assets/17260e4d-86b1-406a-99a4-259eb763c19d" />
+
 
 Adjusted ACF and PACF plot:
 
@@ -62,16 +64,22 @@ P_t
 
 ## ARMA-X
 
+Standardise data first.
+
 <img width="848" height="644" alt="7e5ba899-aaa5-4798-b99b-26904d191c41" src="https://github.com/user-attachments/assets/e76d0c11-2740-472c-8b70-27feab1c0838" />
 
---- Autocorrelation Test (Ljung-Box) of Residuals---
-    lb_stat  lb_pvalue
-1  3.078383   0.079339
+Autocorrelation Test (Ljung-Box) of Residuals
+
+lb_stat  lb_pvalue
+
+3.078383   0.079339
 
 
---- Autocorrelation Test (Ljung-Box) of Squared Residuals---
-     lb_stat  lb_pvalue
-1  10.750803   0.001042
+Autocorrelation Test (Ljung-Box) of Squared Residuals
+
+lb_stat  lb_pvalue
+
+10.750803   0.001042
 
 Squared Residuals:
 
@@ -81,6 +89,7 @@ Residual:
 
 <img width="838" height="372" alt="image" src="https://github.com/user-attachments/assets/b46b1cf6-2ab1-4a26-8442-47d3ff077b91" />
 
+mean=-0.005027
 
 ## GARCH-X
 
